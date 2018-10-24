@@ -72,21 +72,6 @@ input[type="checkbox"]:checked ~ .goods__item {
 	border-color: #d91667;
 }
 
-/*
-.goods__item:before {
-	content: "";
-	z-index: 1;
-	position: absolute;
-	top: -25px;
-	left: -25px;
-	width: 50px;
-	height: 50px;
-	clip: rect(25px, auto, auto, 25px);
-	border: 25px solid black;
-	box-sizing: border-box;
-}
-*/
-
 .goods__item:before {
 	content: "";
 	position: absolute;
@@ -101,12 +86,50 @@ input[type="checkbox"]:checked ~ .goods__item {
 	box-sizing: border-box;
 }
 
+input[type="checkbox"]:checked ~ .goods__item:before {
+	background-image: 
+		linear-gradient(to right bottom, transparent 48%, #d91667 48%, #d91667 54%, #f2f2f2 54%),
+		url("img/Pattern.png");;
+}
+
 
 .goods__item-moto {
+	position: relative;
 	margin-bottom: 15px;
+	height: 16px;
 	color: #666666;
 	font-size: 16px;
 }
+
+.goods__item-moto:before,
+.goods__item-moto:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	color: #666666;	
+	font-family: "Trebuchet MS";
+	font-size: 16px;
+}
+
+.goods__item-moto:before {
+	content: attr(data-default);
+}
+
+
+input[type="checkbox"]:checked ~ .goods__item > .goods__item-moto:before {
+	color: #e62e7a;
+}
+
+input[type="checkbox"]:checked:hover ~ .goods__item > .goods__item-moto:before {
+	visibility: hidden;
+}
+
+input[type="checkbox"]:checked:hover ~ .goods__item > .goods__item-moto:after {
+	content: attr(data-deny);
+	color: #e62e7a;
+} 
+
 
 .goods__item-name {
 	margin: 0;
@@ -132,6 +155,7 @@ input[type="checkbox"]:checked ~ .goods__item {
 }
 
 .weight {
+	box-sizing: border-box;
 	position: absolute;
 	bottom: 15px;
 	right: 15px;
@@ -143,7 +167,6 @@ input[type="checkbox"]:checked ~ .goods__item {
 	line-height: 22px;
 	background-color: #1698d9;
 	border-radius: 50%;
-	box-sizing: border-box;
 }
 
 .mesurement-unit {
@@ -154,6 +177,10 @@ input[type="checkbox"]:checked ~ .goods__item {
 	display: block;
 	margin-top: 16px;
 	font-size: 42px;
+}
+
+input[type="checkbox"]:checked ~ .goods__item > .weight {
+	background-color: #d91667;
 }
 
 .goods__item-buy {
@@ -175,3 +202,5 @@ input[type="checkbox"]:checked ~ .goods__item {
 	cursor: pointer;
 	text-decoration: underline dashed;
 }
+
+
