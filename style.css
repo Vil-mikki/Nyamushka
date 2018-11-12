@@ -72,7 +72,8 @@ input[type="checkbox"]:checked ~ .goods__item {
 	border-color: #d91667;
 }
 
-.goods__item:before {
+.goods__item:before,
+.disabledFilter:before {
 	content: "";
 	position: absolute;
 	top: -4px;
@@ -92,8 +93,22 @@ input[type="checkbox"]:checked ~ .goods__item:before {
 		url("img/Pattern.png");;
 }
 
+.disabledFilter {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 312px;
+    height: 472px;
+    background-color: #f2f2f2;  
+    border-radius: 8px;
+    opacity: .6;
+}
 
-.goods__item-moto {
+.goods__item-moto,
+.goods__item-moto__refuse {
+	display: none;
 	position: relative;
 	margin-bottom: 15px;
 	height: 16px;
@@ -101,34 +116,9 @@ input[type="checkbox"]:checked ~ .goods__item:before {
 	font-size: 16px;
 }
 
-.goods__item-moto:before,
-.goods__item-moto:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	color: #666666;	
-	font-family: "Trebuchet MS";
-	font-size: 16px;
-}
-
-.goods__item-moto:before {
-	content: attr(data-default);
-}
-
-
-input[type="checkbox"]:checked ~ .goods__item > .goods__item-moto:before {
+.goods__item-moto__refuse {
 	color: #e62e7a;
 }
-
-input[type="checkbox"]:checked:hover ~ .goods__item > .goods__item-moto:before {
-	visibility: hidden;
-}
-
-input[type="checkbox"]:checked:hover ~ .goods__item > .goods__item-moto:after {
-	content: attr(data-deny);
-	color: #e62e7a;
-} 
 
 
 .goods__item-name {
@@ -183,7 +173,10 @@ input[type="checkbox"]:checked ~ .goods__item > .weight {
 	background-color: #d91667;
 }
 
-.goods__item-buy {
+.goods__item-buy,
+.goods__item-buy__selected,
+.goods__item-buy__disabled {
+	display: none;
 	text-align: center;
 	color: #ffffff;
 	font-size: 13px;
@@ -203,4 +196,29 @@ input[type="checkbox"]:checked ~ .goods__item > .weight {
 	text-decoration: underline dashed;
 }
 
+.goods__item-buy__disabled {
+    color: #d2d253;
+}
 
+.visible {
+	display: block;
+}
+
+input[disabled] ~ .goods__item {
+	color: #666666;
+    border-color: #666666;
+}
+
+input[disabled] ~ .goods__item:before,
+.disabledFilter:before{
+    background-image: linear-gradient(to right bottom, transparent 48%, #666 48%, #666 54%, #f2f2f2 54%),
+    url(img/Pattern.png);
+}
+
+input[disabled] ~ .goods__item > .weight {
+    background-color: #666666;
+}
+
+input[disabled] ~ .goods__item > .disabledFilter {
+    display: block;
+}

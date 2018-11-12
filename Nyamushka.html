@@ -11,9 +11,11 @@
 		<div class="flex-box">
 			<div class="item-container">
 				<label for="item-1">
-					<input type="checkbox" id="item-1">
+					<input class="item" type="checkbox" id="item-1">
 					<div class="goods__item goods__item-1">
-						<p class="goods__item-moto" data-default="Сказочное заморское яство" data-deny="Котэ не одобряет?"></p>
+                        <div class="disabledFilter"></div>
+						<p class="goods__item-moto visible">Сказочное заморское яство</p>
+						<p class="goods__item-moto__refuse">Котэ не одобряет?</p>
 						<h2 class="goods__item-name"><span>Нямушка</span><br>с фуа-гра</h2>
 						<ul class="goods__item-description">
 							<li><span>10</span> порций</li>
@@ -25,13 +27,17 @@
 						</div>
 					</div>
 				</label>
-				<p class="goods__item-buy">Чего сидишь? Порадуй котэ, <label for="item-1" class="goods__item-buy--dashed">купи</label><span>.</span></p>
+				<p class="goods__item-buy visible">Чего сидишь? Порадуй котэ, <label for="item-1" class="goods__item-buy--dashed">купи</label><span>.</span></p>
+				<p class="goods__item-buy__selected">Печень утки разварная с артишоками.</p>
+				<p class="goods__item-buy__disabled">Печалька, с фуа-гра закончился.</p>
 			</div>
 			<div class="item-container">
 				<label for="item-2">
-					<input type="checkbox" id="item-2">
+					<input class="item" type="checkbox" id="item-2">
 					<div class="goods__item goods__item-2">
-						<p class="goods__item-moto" data-default="Сказочное заморское яство" data-deny="Котэ не одобряет?"></p>
+                        <div class="disabledFilter"></div>
+						<p class="goods__item-moto visible">Сказочное заморское яство</p>
+						<p class="goods__item-moto__refuse">Котэ не одобряет?</p>
 						<h2 class="goods__item-name"><span>Нямушка</span><br>с рыбой</h2>
 						<ul class="goods__item-description">
 							<li><span>40</span> порций</li>
@@ -43,13 +49,17 @@
 						</div>
 					</div>
 				</label>
-				<p class="goods__item-buy">Чего сидишь? Порадуй котэ, <label for="item-2" class="goods__item-buy--dashed">купи</label><span>.</span></p>
+				<p class="goods__item-buy visible">Чего сидишь? Порадуй котэ, <label for="item-2" class="goods__item-buy--dashed">купи</label><span>.</span></p>
+				<p class="goods__item-buy__selected">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
+				<p class="goods__item-buy__disabled">Печалька, с рыбой закончился.</p>
 			</div>
 			<div class="item-container">
 				<label for="item-3">
-					<input type="checkbox" id="item-3" disabled>
+					<input class="item" type="checkbox" id="item-3" disabled>
 					<div class="goods__item goods__item-3">
-						<p class="goods__item-moto" data-default="Сказочное заморское яство" data-deny="Котэ не одобряет?"></p>
+                        <div class="disabledFilter"></div>
+						<p class="goods__item-moto visible">Сказочное заморское яство</p>
+						<p class="goods__item-moto__refuse">Котэ не одобряет?</p>
 						<h2 class="goods__item-name"><span>Нямушка</span><br>с курой</h2>
 						<ul class="goods__item-description">
 							<li><span>100</span> порций</li>
@@ -62,9 +72,13 @@
 						</div>
 					</div>
 				</label>
-				<p class="goods__item-buy">Чего сидишь? Порадуй котэ, <label for="item-3" class="goods__item-buy--dashed">купи</label><span>.</span></p>
+				<p class="goods__item-buy visible">Чего сидишь? Порадуй котэ, <label for="item-3" class="goods__item-buy--dashed">купи</label><span>.</span></p>
+				<p class="goods__item-buy__selected">Филе из цыплят с трюфелями в бульоне.</p>
+				<p class="goods__item-buy__disabled">Печалька, с курой закончился.</p>
 			</div>
 		</div>
 	</section>
+
+	<script src="script.js"></script>
 </body>
 </html>
